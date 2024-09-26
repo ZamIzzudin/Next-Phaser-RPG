@@ -16,13 +16,13 @@ export default class Map {
 
   moveChar(cursors: Phaser.Types.Input.Keyboard.CursorKeys) {
     if (cursors.left.isDown) {
-      this.player.sprite.x -= 1;
+      this.player.moveToTile("x", -1, "left");
     } else if (cursors.right.isDown) {
-      this.player.sprite.x += 1;
+      this.player.moveToTile("x", 1, "right");
     } else if (cursors.up.isDown) {
-      this.player.sprite.y -= 1;
+      this.player.moveToTile("y", -1, "up");
     } else if (cursors.down.isDown) {
-      this.player.sprite.y += 1;
+      this.player.moveToTile("y", 1, "down");
     }
   }
 }

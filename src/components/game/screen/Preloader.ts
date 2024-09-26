@@ -1,6 +1,7 @@
 /** @format */
 
 import Phaser from "phaser";
+import MoveAnimation from "../logic/MoveAnimation";
 
 export default class Preloader extends Phaser.Scene {
   constructor() {
@@ -17,6 +18,7 @@ export default class Preloader extends Phaser.Scene {
   }
 
   create() {
+    MoveAnimation(this, "player");
     this.scene.start("Main_Screen");
   }
 }
