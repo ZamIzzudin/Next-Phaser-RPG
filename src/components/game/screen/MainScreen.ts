@@ -1,5 +1,6 @@
 /** @format */
 import Phaser from "phaser";
+import Map from "../object/Map";
 
 export default class MainScreen extends Phaser.Scene {
   constructor() {
@@ -7,7 +8,8 @@ export default class MainScreen extends Phaser.Scene {
   }
 
   create() {
-    this.add.image(0, 0, "demo").setOrigin(0);
-    this.add.sprite(16, 16, "player").setOrigin(0);
+    const mapKey = "demo";
+
+    const map = new Map(this, mapKey);
   }
 }
