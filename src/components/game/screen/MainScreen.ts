@@ -12,7 +12,7 @@ export default class MainScreen extends Phaser.Scene {
   }
 
   create() {
-    const mapKey = "demo";
+    const mapKey = "street";
 
     this.map = new Map(this, mapKey);
     this.cursors = this.input.keyboard.createCursorKeys();

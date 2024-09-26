@@ -1,4 +1,5 @@
 /** @format */
+// @ts-nocheck: Object is possibly 'null'.
 
 import GridParse from "../utils/GridParse";
 
@@ -8,6 +9,7 @@ export default class Char {
   coordinate: { x: number; y: number };
   isMoving: boolean;
   key: string;
+  isCentered: boolean;
 
   constructor(
     scene: Phaser.Scene,
@@ -19,6 +21,7 @@ export default class Char {
     this.scene = scene;
     this.coordinate = GridParse.CharCoordinate(x, y);
     this.isMoving = false;
+    this.isCentered = false;
     this.key = key;
 
     this.sprite = this.scene.add.sprite(
@@ -80,5 +83,13 @@ export default class Char {
         }
       },
     });
+  }
+
+  centeredCamera() {
+    if (this.isCentered) {
+      this.scene.cameras.main.stopFollow(this.sprite);
+    } else {
+      this.scene.cameras.main.startFollow(this.sprite);
+    }
   }
 }

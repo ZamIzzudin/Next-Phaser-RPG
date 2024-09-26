@@ -10,7 +10,8 @@ export default class Preloader extends Phaser.Scene {
 
   preload() {
     // Load Assets
-    this.load.image("demo", "/demoLower.png");
+    this.load.image("demo", "/DemoLower.png");
+    this.load.image("street", "/StreetLower.png");
     this.load.spritesheet("player", "/hero.png", {
       frameWidth: 32,
       frameHeight: 32,

@@ -10,8 +10,13 @@ export default class Map {
     this.scene = scene;
     this.mapKey = mapKey;
 
-    this.scene.add.image(0, 0, "demo").setOrigin(0);
-    this.player = new Char(this.scene, 1, 1, "player", 0);
+    const map = this.scene.add.image(0, 0, this.mapKey).setOrigin(0);
+
+    this.scene.cameras.main.setBounds(0, 0, map.width, map.height);
+
+    this.player = new Char(this.scene, 5, 10, "player", 0);
+
+    this.player.centeredCamera();
   }
 
   moveChar(cursors: Phaser.Types.Input.Keyboard.CursorKeys) {
